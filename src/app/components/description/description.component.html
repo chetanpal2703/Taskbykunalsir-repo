@@ -1,0 +1,27 @@
+<p>Current Selected Item</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8">
+            <div *ngIf="showproperty; else elseBlock">
+                <div class="card" style="width: 18rem;" >
+                    <img class="card-img-top" src={{showproperty.thumbnail}} alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">{{showproperty.title}}</h5>
+                      <p class="card-text">{{showproperty.description}}</p>
+                      <p class="card-text">Price:{{showproperty.price}}</p>
+                      <!-- <a href="#" class="btn btn-primary">visit product</a> -->
+                      <button type="button" class="btn btn-success" (click)="buyAllProduct()">Buy All Product</button>
+                    </div>
+                </div>    
+            </div>
+            <ng-template #elseBlock>
+                <div>No Products to Show</div>
+            </ng-template>
+        </div>
+        <div class="col-4">
+            Total item:{{this.totalitem}}
+            Total Price:{{this.totalprice}}
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row" >
+        <div class="col bg-secondary">
+            <div class="row">
+               
+                    <ng-container >
+                        <div class="card" style="width: 18rem;" *ngFor="let item of data">
+                            <img class="card-img-top" src={{item.thumbnail}} alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">{{item.title}}</h5>
+                              <p class="card-text">{{item.description}}</p>
+                              <p class="card-text">Price:{{item.price}}</p>
+                              <!-- <a href="#" class="btn btn-primary">visit product</a> -->
+                              <button type="button" class="btn btn-success" (click)="onbtnClick(item)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </ng-container>
+                
+                
+                
+            </div>
+        </div>
+
+        <div class="col bg-warning"><app-description [receivedParticularItem]="receivedSingleItemInfo" [billing]="billing" ></app-description></div>
+    </div>
+</div>
+<p>home works!</p>
+
+
