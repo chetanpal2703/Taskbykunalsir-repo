@@ -28,20 +28,29 @@ export class DescriptionComponent implements OnChanges {
   
   buyAllProduct(){
     // Open the dialog when the user clicks "Buy All Product"
-  const dialogRef = this.dialog.open(BuyDialogComponent, {
-    width: '300px', // Adjust the width as needed
-    data: { totalitem: this.totalitem, totalprice: this.totalprice }
-  });
+    const dialogRef = this.dialog.open(BuyDialogComponent, {
+      width: '300px', // Adjust the width as needed
+      data: { totalitem: this.totalitem, totalprice: this.totalprice }
+    });
+    dialogRef.componentInstance.descriptionComponent = this;
+    // Handle the dialog result
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // User clicked "Buy", implement the logic here
+        console.log('User clicked "Buy"');
+        this.resetValues();
 
-  // Handle the dialog result
-  dialogRef.afterClosed().subscribe(result => {
-    if (result) {
-      // User clicked "Buy", implement the logic here
-      console.log('User clicked "Buy"');
-    } else {
-      // User clicked "Cancel", implement the logic here
-      console.log('User clicked "Cancel"');
-    }
-  });
+      } else {
+        // User clicked "Cancel", implement the logic here
+        console.log('User clicked "Cancel"');
+      }
+    });
+  }
+
+  resetValues() {
+    this.totalitem = 0;
+    this.totalprice = 0;
+    this.showproperty = null; // Reset displayed item
+    // ... reset other properties as needed
   }
 }

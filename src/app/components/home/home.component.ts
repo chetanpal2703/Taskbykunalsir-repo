@@ -24,4 +24,9 @@ export class HomeComponent {
     this.billing.totalPrice+=item.price;
     this.receivedSingleItemInfo=item;
   }
+
+  resetHomeState() {
+    this.billing = { totalPrice: 0, totalCount: 0 };
+    this.receivedSingleItemInfo = null;
+  }
 }
