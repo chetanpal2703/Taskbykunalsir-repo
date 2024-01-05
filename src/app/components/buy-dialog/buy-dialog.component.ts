@@ -13,21 +13,17 @@ export class BuyDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<BuyDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { totalitem: number, totalprice: number },
-    // private router: Router,
+    
     
   ) { }
 
   onBuy(): void {
     // Implement the logic when the user clicks the "Buy" button
     // You can close the dialog and perform any other necessary actions.
-    // this.router.navigate(['/home']);
-    
     this.descriptionComponent.resetValues();
-    
-    // this.descriptionComponent.showproperty=null;
     this.dialogRef.close(true);
     // window.location.reload();
-    // this.homeComponent.resetHomeState();
+    
   }
 
   onCancel(): void {

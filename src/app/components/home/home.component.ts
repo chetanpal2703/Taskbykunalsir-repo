@@ -25,8 +25,5 @@ export class HomeComponent {
     this.receivedSingleItemInfo=item;
   }
 
-  resetHomeState() {
-    this.billing = { totalPrice: 0, totalCount: 0 };
-    this.receivedSingleItemInfo = null;
-  }
+  
 }
